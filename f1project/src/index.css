@@ -23,3 +23,15 @@ body {
     text-align: center;
 
 }
+
+.teams{
+    display: flex;
+    justify-content: space-evenly;
+    column-gap: 200px;
+    flex-wrap: wrap;
+    row-gap: 50px;   
+}
+
+.temp{
+    color: white;
+}
