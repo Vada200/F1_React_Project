@@ -17,8 +17,9 @@ function App() {
 
     if (selectedTeam) {
 
-    sample_text = <div className='temp'>
-      {selectedTeam}
+    sample_text = <div>
+    <DriverData {...DRIVERS_DATA[selectedTeam][0]}/>
+    <DriverData {...DRIVERS_DATA[selectedTeam][1]}/>
     </div>
     }
 
@@ -30,14 +31,14 @@ function App() {
       <div className='teams'>
           <TeamContainer image={TEAM_NAMES_LOGOS[0].image} name={TEAM_NAMES_LOGOS[0].name} onSelect={() => handleSelect("redbull")}/> {/*props */}
           <TeamContainer {...TEAM_NAMES_LOGOS[1]} onSelect={() => handleSelect("ferrari")}/>
-          <TeamContainer {...TEAM_NAMES_LOGOS[2]} onSelect={() => console.log("Kiválasztott csapat:", TEAM_NAMES_LOGOS[0].name)}/>
-          <TeamContainer {...TEAM_NAMES_LOGOS[3]} onSelect={() => console.log("Kiválasztott csapat:", TEAM_NAMES_LOGOS[0].name)}/>
-          <TeamContainer {...TEAM_NAMES_LOGOS[4]} onSelect={() => console.log("Kiválasztott csapat:", TEAM_NAMES_LOGOS[0].name)}/>
-          <TeamContainer {...TEAM_NAMES_LOGOS[5]} onSelect={() => console.log("Kiválasztott csapat:", TEAM_NAMES_LOGOS[0].name)}/>
-          <TeamContainer {...TEAM_NAMES_LOGOS[6]} onSelect={() => console.log("Kiválasztott csapat:", TEAM_NAMES_LOGOS[0].name)}/>
-          <TeamContainer {...TEAM_NAMES_LOGOS[7]} onSelect={() => console.log("Kiválasztott csapat:", TEAM_NAMES_LOGOS[0].name)}/>
-          <TeamContainer {...TEAM_NAMES_LOGOS[8]} onSelect={() => console.log("Kiválasztott csapat:", TEAM_NAMES_LOGOS[0].name)}/>
-          <TeamContainer {...TEAM_NAMES_LOGOS[9]} onSelect={() => console.log("Kiválasztott csapat:", TEAM_NAMES_LOGOS[0].name)}/>
+          <TeamContainer {...TEAM_NAMES_LOGOS[2]} onSelect={() => handleSelect("mercedes")}/>
+          <TeamContainer {...TEAM_NAMES_LOGOS[3]} onSelect={() => handleSelect("mclaren")}/>
+          <TeamContainer {...TEAM_NAMES_LOGOS[4]} onSelect={() => handleSelect("aston")}/>
+          <TeamContainer {...TEAM_NAMES_LOGOS[5]} onSelect={() => handleSelect("visa")}/>
+          <TeamContainer {...TEAM_NAMES_LOGOS[6]} onSelect={() => handleSelect("williams")}/>
+          <TeamContainer {...TEAM_NAMES_LOGOS[7]} onSelect={() => handleSelect("haas")}/>
+          <TeamContainer {...TEAM_NAMES_LOGOS[8]} onSelect={() => handleSelect("sauber")}/>
+          <TeamContainer {...TEAM_NAMES_LOGOS[9]} onSelect={() => handleSelect("alpine")}/>
       </div>
 
       <div>
