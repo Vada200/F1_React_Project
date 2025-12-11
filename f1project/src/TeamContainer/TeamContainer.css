@@ -1,0 +1,37 @@
+.container {
+    background: rgb(43, 43, 43);
+    border-radius: 1em;
+    width: 150px;
+    border: 0.1em solid rgb(136, 136, 136);
+    font-family: 'Lexend', sans-serif;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    position: relative; /* kell a pseudo-elementhez */
+    overflow: visible;   /* hogy a glow ne lógjon ki */
+}
+
+.container img {
+    border-radius: 1em;
+    width: 100%;
+}
+
+/* pseudo-element a container mögé */
+.container::before {
+    content: '';
+    position: absolute;
+    top: 85%; /* közvetlenül a container alá */
+    left: 0;
+    width: 100%;
+    height: 55px; /* a fény vastagsága */
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.6), transparent); /* lefelé haladó fény */
+    transform: translateY(0);
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    opacity: 0; /* alapból láthatatlan */
+    z-index: -1; /* container mögé kerül */
+}
+
+.container:hover::before {
+    transform: translateY(25px); /* lefelé csúszik kicsit */
+    opacity: 1; /* láthatóvá válik */
+}
